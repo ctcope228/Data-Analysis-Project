@@ -182,17 +182,16 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: `GameData`
+- Component Design #1: `PlayerData`
 
   - **Description**:
-    - Stores data from a sports game such as team and player stats.
+    - Stores player data for sports analysis.
   - **Kernel Methods**:
-    - `playerStats(player)`: Retrieves data for a specific player.
-    - `teamStats(team)`: Retrieves data for a specific team.
-    - `void updateGameData(game, playerStats, teamStats)`: Updates data for a given game.
+    - `void addStat(String stat, String value)`: Adds a stat type and value to a player. If stat type is already assigned, replaces value.
+    - `boolean hasStat(String stat)`: Checks if a player has a specific stat type.
+    - `String value(String stat)`: Returns value of a given stat.
   - **Secondary Methods**:
-    - `compare(player1, player2)`: Compares two players performance.
-    - `compareTeams()`: Compares team performance.
+    - `int compareStat(PlayerData player, String stat)`: Compares stat value of this to the given player. Returns -1, 0 or 1 for this stat is less than, equal to or greater than.
     - `player topPlayer(statType)`: Returns top player for a specific stat.
   - **Additional Considerations** (_note_: "I don't know" is an acceptable
     answer for each of the following questions):
@@ -200,13 +199,13 @@ will likely refine your design to make your implementation easier to use.
       - Yes, so new data could be added.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - Yes, likely a Map.Pair to link specific stats to games, teams, or players.
+      - Yes, likely a Map.Pair to link specific values to stat types.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - Yes, constants for stat types (Points, Assists, etc).
+      - Unsure
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - Yes, all the secondary methods need the stats methods to be implemented. For example, getTopPlayers can sort through player stats using playerStats(player);
+      - Yes, all the secondary methods can be implemented. For example, compareStat() is implemented using value().
 
 - Component Design #2: `CharacterInventory`
 
@@ -239,6 +238,7 @@ will likely refine your design to make your implementation easier to use.
   - **Kernel Methods**:
     - `void addSong()`: Adds a song to the playlist.
     - `song removeSong()`: Removes a song from the playlist.
+    - `int length()`: Returns length of playlist.
   - **Secondary Methods**:
     - `void shufflePlaylist()`: Randomizes the order of songs.
     - `song getNextSong()`: Retrieves the next song in the playlist.
