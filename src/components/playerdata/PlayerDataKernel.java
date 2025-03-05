@@ -1,6 +1,20 @@
 package components;
 
-public interface PlayerDataKernel {
+import components.standard.Standard;
+
+/**
+ * Player data kernel component with primary methods. (Note: by package-wide
+ * convention, all references are non-null.)
+ *
+ * @mathmodel type PlayerDataKernel is modeled by finite set of (String, String)
+ *            pairs
+ * @initially <pre>
+ * ():
+ *  ensures
+ *   this = {}
+ * </pre>
+ */
+public interface PlayerDataKernel extends Standard<PlayerData> {
 
     /**
      * Adds the pair ({@code type}, {@code value}) to this.
