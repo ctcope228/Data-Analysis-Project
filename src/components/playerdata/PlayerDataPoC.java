@@ -1,4 +1,4 @@
-package components;
+package components.playerdata;
 
 import components.map.Map1L;
 import components.simplewriter.SimpleWriter;
