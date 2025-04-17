@@ -31,3 +31,13 @@ the following form: YYYY.0M.0D.
 ### Updated
 
 - Changed design to include `canConvertToInt` and `toInt` methods
+
+## [2025.04.17]
+
+### Added
+
+- Designed abstract class for `PlayerData`component
+
+### Updated
+
+- Changed implementation of `compareStat` to use new methods
