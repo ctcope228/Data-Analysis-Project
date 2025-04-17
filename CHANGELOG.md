@@ -41,3 +41,13 @@ the following form: YYYY.0M.0D.
 ### Updated
 
 - Changed implementation of `compareStat` to use new methods
+
+## 2025.04.17
+
+### Added
+
+- Designed kernel implementation for `PlayerData`component
+
+### Updated
+
+- Changed secondary methods to use double instead of int.
