@@ -2,6 +2,9 @@ package components.playerdata;
 
 import components.map.Map1L;
 
+/**
+ * Layered implementations of kernel methods for {@code PlayerData}.
+ */
 public class PlayerData1L extends PlayerDataSecondary {
 
     /**
