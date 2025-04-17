@@ -6,21 +6,17 @@ package components.playerdata;
 public abstract class PlayerDataSecondary implements PlayerData {
 
     @Override
-    public abstract int compareStat(PlayerDataPoC player, String stat) {
-        if (this.canConvertToInt(stat)) {
-            int v1 = this.toInt(stat);
-        }
-        if (player.canConvertToInt(stat)) {
-            int v2 = player.toInt(stat);
-        }
-        // use Integer.compare for clean -1/0/1 semantics
-        return Integer.compare(v1, v2);
+    public abstract double compareStat(PlayerDataPoC player, String stat) {
+        double v1 = this.toDouble(stat);
+        double v2 = player.toDouble(stat);
+
+        return Double.compare(v1, v2);
     }
 
     @Override
-    public abstract boolean canConvertToInt(String stat){
+    public abstract boolean canConvertToDouble(String stat){
         try {
-            Integer.parseInt(this.value(stat));
+            Double.parseDouble(this.value(stat));
             return true;
         } catch (NumberFormatException e) {
             return false;
@@ -28,7 +24,7 @@ public abstract class PlayerDataSecondary implements PlayerData {
     }
 
     @Override
-    public abstract int toInt(String stat){
-       return Integer.parseInt(this.value(stat));
+    public abstract double toDouble(String stat){
+       return Double.parseDouble(this.value(stat));
     }
 }

@@ -3,7 +3,11 @@ package components.playerdata;
 import components.map.Map1L;
 
 /**
- * Layered implementations of kernel methods for {@code PlayerData}.
+ * {@code PlayerData} represented as a {@link Map<String, String>} with
+ * implementations of primary methods.
+ *
+ * @convention this.rep != null
+ * @correspondence this = { ⟨k, v⟩ | k ∈ rep.stat() ∧ v = rep.value(k) }
  */
 public class PlayerData1L extends PlayerDataSecondary {
 

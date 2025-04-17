@@ -19,29 +19,30 @@ public interface PlayerData extends PlayerDataKernel {
      *          this.stat > player.stat, compareStat = 0 if this.stat ==
      *          player.stat
      */
-    int compareStat(PlayerDataPoC player, String stat);
+    double compareStat(PlayerDataPoC player, String stat);
 
     /**
      * Reports whether the value of the specified stat can be converted to an
-     * {@code int}.
+     * {@code double}.
      *
      * @param stat
      *            the stat to check
-     * @return {@code true} if the stat value can be parsed as an {@code int},
-     *         {@code false} otherwise
-     * @ensures canConvertToInt = (value(stat) can be successfully parsed as an
-     *          int)
+     * @return {@code true} if the stat value can be parsed as an
+     *         {@code double}, {@code false} otherwise
+     * @ensures canConvertToDouble = (value(stat) can be successfully parsed as
+     *          an double)
      */
-    boolean canConvertToInt(String stat);
+    boolean canConvertToDouble(String stat);
 
     /**
-     * Retrieves the value of the specified stat as an {@code int}, if possible.
+     * Retrieves the value of the specified stat as an {@code double}, if
+     * possible.
      *
      * @param stat
-     *            the stat to retrieve as an integer
-     * @return the integer representation of the stat value
-     * @requires canConvertToInt(stat)
-     * @ensures toInt = Integer.parseInt(value(stat))
+     *            the stat to retrieve as an double
+     * @return the double representation of the stat value
+     * @requires canConvertToDouble(stat)
+     * @ensures toDouble = Double.parseDouble(value(stat))
      */
-    int toInt(String stat);
+    double toDouble(String stat);
 }
