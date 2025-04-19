@@ -51,3 +51,10 @@ the following form: YYYY.0M.0D.
 ### Updated
 
 - Changed secondary methods to use double instead of int.
+
+## 2025.04.18
+
+### Added
+
+- Designed test suite for `PlayerData` component
+- Designed two different use cases for `PlayerData` component

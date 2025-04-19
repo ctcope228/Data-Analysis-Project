@@ -19,7 +19,7 @@ public interface PlayerData extends PlayerDataKernel {
      *          this.stat > player.stat, compareStat = 0 if this.stat ==
      *          player.stat
      */
-    double compareStat(PlayerDataPoC player, String stat);
+    double compareStat(PlayerData player, String stat);
 
     /**
      * Reports whether the value of the specified stat can be converted to an
