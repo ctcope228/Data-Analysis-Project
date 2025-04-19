@@ -14,7 +14,7 @@ public abstract class PlayerDataSecondary implements PlayerData {
     }
 
     @Override
-    public abstract boolean canConvertToDouble(String stat){
+    public abstract boolean canConvertToDouble(String stat) {
         try {
             Double.parseDouble(this.value(stat));
             return true;
@@ -24,7 +24,7 @@ public abstract class PlayerDataSecondary implements PlayerData {
     }
 
     @Override
-    public abstract double toDouble(String stat){
+    public abstract double toDouble(String stat) {
        return Double.parseDouble(this.value(stat));
     }
 }

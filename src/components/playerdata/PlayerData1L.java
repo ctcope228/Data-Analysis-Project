@@ -32,6 +32,44 @@ public class PlayerData1L extends PlayerDataSecondary {
         this.createNewRep();
     }
 
+    /*
+     * Standard methods -------------------------------------------------------
+     */
+
+    @Override
+    public final PlayerData newInstance() {
+        try {
+            return this.getClass().getConstructor().newInstance();
+        } catch (ReflectiveOperationException e) {
+            throw new AssertionError(
+                    "Cannot construct object of type " + this.getClass());
+        }
+    }
+
+    @Override
+    public final void clear() {
+        this.createNewRep();
+    }
+
+    @Override
+    public final void transferFrom(PlayerData source) {
+        assert source != null : "Violation of: source is not null";
+        assert source != this : "Violation of: source is not this";
+        assert source instanceof PlayerData1L : ""
+                + "Violation of: source is of dynamic type PlayerData1L";
+        /*
+         * This cast cannot fail since the assert above would have stopped
+         * execution in that case.
+         */
+        PlayerData1L localSource = (PlayerData1L) source;
+        this.rep = localSource.rep;
+        localSource.createNewRep();
+    }
+
+    /*
+     * Kernel methods ---------------------------------------------------------
+     */
+
     @Override
     public final void addStat(String stat, String value) {
         if (!this.rep.hasKey(stat)) {
